@@ -18,69 +18,46 @@
       </div>
 
       <div class="govuk-grid-column-two-thirds">
-        <div class="govuk-date-input" id="extendDate">
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group">
 
+            <legend class="govuk-fieldset__legend">
+              When do you want to extend to?
+            </legend>
 
+            <div class="govuk-date-input" id="extendDate">
 
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="extendDateDay">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="extendDateDay" name="entendDateDay" type="number" pattern="[0-9]*">
+                </div>
+              </div>
 
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="extendDateMonth">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="extendDateMonth" name="entendDateMonth" type="number" pattern="[0-9]*">
+                </div>
+              </div>
 
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="extendDateYear">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="extendDateYear" name="entendDateYear" type="number" pattern="[0-9]*">
+                </div>
+              </div>
 
-
-
-
-    <div class="govuk-date-input__item">
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-date-input__label" for="extendDateDay">
-          Day
-        </label>
-
-
-        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="extendDateDay" name="entendDateDay" type="number" pattern="[0-9]*">
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <div class="govuk-date-input__item">
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-date-input__label" for="extendDateMonth">
-          Month
-        </label>
-
-
-        <input class="govuk-input govuk-date-input__input govuk-input--width-2 " id="extendDateMonth" name="entendDateMonth" type="number" pattern="[0-9]*">
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <div class="govuk-date-input__item">
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-date-input__label" for="extendDateYear">
-          Year
-        </label>
-
-
-        <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="extendDateYear" name="entendDateYear" type="number" pattern="[0-9]*">
-      </div>
-    </div>
-
-  </div>
+            </div>
+          </fieldset>
+        </div>
 
         {{ govukTextarea({
           classes: '',
