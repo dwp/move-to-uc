@@ -25,7 +25,7 @@
     </dd>
     {% endif %}
 
-    {% if claimant.status != "Claimed" %}
+    {% if claimant.status != "Claimed" and claimant.status != "Cancelled" %}
     <dt>
       Claim by:
     </dt>

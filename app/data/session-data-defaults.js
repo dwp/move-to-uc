@@ -19,7 +19,7 @@ Example usage:
 
 module.exports = {
 
-  "statuses": ["Preparation", "Notified", "Claimed", "Deferred", "Exempt", "Extended", "Not claimed"],
+  "statuses": ["Preparation", "Notified", "Claimed", "Deferred-x", "Exempt-x", "Extended-?", "Not claimed-?", "Cancelled"],
 
   "claimants": [
     {

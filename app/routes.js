@@ -155,5 +155,76 @@ router.post('/claimant/extend/confirmation-page', (req, res) => {
 
 
 
+
+router.get('/cancel', (req, res) => {
+  const search = req.session.data['find'].replace(/ /g,'').toUpperCase()
+  const claimant = req.session.data['claimants'].filter(claimant => claimant.nino === search)
+
+  res.locals.claimant = claimant[0]
+
+  if (claimant == false) {
+    res.render('find/no-match')
+  } else {
+    res.render('claimant/cancel/index')
+  }
+})
+
+router.post('/claimant/cancel/confirmation-page', (req, res) => {
+  const search = req.session.data['find'].replace(/ /g,'').toUpperCase()
+  let claimantToEdit = req.session.data['claimants'].filter(claimant => claimant.nino === search)
+
+
+  claimantToEdit[0].status = "Cancelled"
+
+  const newItem = Object.assign({
+    title: "Move canceled",
+    body: req.session.data['cancelReason'],
+    name: req.session.data['user-name']
+  })
+
+  claimantToEdit[0].history.push(newItem)
+
+  res.render('claimant/cancel/confirmation-page')
+})
+
+
+
+
+
+router.get('/resume', (req, res) => {
+  const search = req.session.data['find'].replace(/ /g,'').toUpperCase()
+  const claimant = req.session.data['claimants'].filter(claimant => claimant.nino === search)
+
+  res.locals.claimant = claimant[0]
+
+  if (claimant == false) {
+    res.render('find/no-match')
+  } else {
+    res.render('claimant/resume/index')
+  }
+})
+
+router.post('/claimant/resume/confirmation-page', (req, res) => {
+  const search = req.session.data['find'].replace(/ /g,'').toUpperCase()
+  let claimantToEdit = req.session.data['claimants'].filter(claimant => claimant.nino === search)
+
+
+  claimantToEdit[0].status = "Preparation"
+
+  const newItem = Object.assign({
+    title: "Move resumed",
+    body: req.session.data['resumeReason'],
+    name: req.session.data['user-name']
+  })
+
+  claimantToEdit[0].history.push(newItem)
+
+  res.render('claimant/resume/confirmation-page')
+})
+
+
+
+
+
 // Add your routes above the module.exports line
 module.exports = router
