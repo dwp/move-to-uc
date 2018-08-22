@@ -106,6 +106,15 @@ $govuk-global-styles: true;
   }
 }
 
+.app-related-items .govuk-link {
+  text-decoration: none;
+
+  &:hover, &:active, &:focus {
+    text-decoration: underline;
+    color: $govuk-link-hover-colour;
+  }
+}
+
 .case-main-content {
   border-top: 1px solid govuk-colour("grey-2");
   padding-top: 20px;
