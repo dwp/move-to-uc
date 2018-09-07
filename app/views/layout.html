@@ -55,22 +55,39 @@
     }
   ]
   }) }}
+  
 {% endblock %}
 
-{% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
-{% endif %}
+
+{% block footer %}
+
+  <footer>
+    <div class="wrapper-footer">
+      <div class="footer-message">
+        <p class="govuk-body-s">A Department for Work and Pensions service</p>
+      </div>
+      <div class="footer-menu">
+        <ul>
+          <li><a href="#0">Feedback</a></li>
+          <li><a href="#0">Help</a></li>
+          <li><a href="#0">GOV.UK home</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  {# {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        }
+      ]
+    }
+  }) }} #}
+{% endblock %}
+
 
 {% block bodyEnd %}
   {% block scripts %}

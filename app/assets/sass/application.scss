@@ -1,8 +1,5 @@
-// Override the govuk-frontend font stack
-$govuk-font-family: "Arial", sans-serif;
-
-// global styles for <a> and <p> tags
-$govuk-global-styles: true;
+// Override typography
+@import "internal/typography";
 
 // Import GOV.UK Frontend
 @import "node_modules/govuk-frontend/all";
@@ -21,6 +18,15 @@ $govuk-global-styles: true;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// Internal styles
+@import "internal/header";
+@import "internal/footer";
+.govuk-template__body {
+  background-color: #f3f3f3;
+  font-size: 18px;
+}
+
+// Extra patterns
 @import 'patterns/buttons';
 @import 'patterns/case-header';
 @import 'patterns/timeline';
